@@ -312,7 +312,15 @@ Note that the pins of this header are numbered `odd-even' with pin \textsf{1} cl
 	\end{minipage}
 \end{figure}
 
-%\input{schematic-v1_0A.tex}
+\chapter{Schematic}
+\label{sec:schematic}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.24,angle=90,origin=c]{images/scga-schematic-1.0a.png}
+	\caption[Sprite Colour Graphics Adapter schematic]{PAL-1 Sprite Colour Graphics Adapter schematic.}
+	\label{fig:layout}
+\end{figure}
 
 \chapter{Board layout}
 \begin{figure}[h!]
@@ -322,7 +330,19 @@ Note that the pins of this header are numbered `odd-even' with pin \textsf{1} cl
 \label{fig:layout}
 \end{figure}
 
-%\input{bom-v1.0a.tex}
+\chapter{Bill of Materials}
+\label{sec:bom}
+
+\begin{table}[htb]
+	\csvreader[head to column names,
+	separator=semicolon,
+	tabular={| c | c | c | p{7cm} |},
+	table head=\hline\rowcolor{gray!20}\textbf{Part} & \textbf{Qty} & \textbf{Value} & \textbf{Description}\\\hline,
+	late after last line=\\\hline]{scga-bom-1.0a.csv}{}
+	{\Ref&\Qnty&\Value&\Description}
+	\caption[Sprite Colour Graphics Adapter bill of materials]{PAL-1 Sprite Colour Graphics Adapter v1.0A bill of materials.}
+	\label{tab:bom}
+\end{table}
 
 \bibliography{scga}
 \bibliographystyle{jox}
